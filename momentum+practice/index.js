@@ -1,13 +1,13 @@
 import fs from "fs"
 
-const user = {
-  id: 5,
-  name: "Sara",
-  active: true
+const product = {
+  id: 10,
+  name: "Laptop",
+  price: 15000
 };
 
-const data = JSON.stringify(user, 4).toUpperCase()
+const data = JSON.stringify(product, null, 4).toLowerCase()
 
-fs.writeFileSync("user.txt", data)
+fs.writeFileSync("product.txt", data)
 
-console.log(fs.readFileSync("user.txt", "utf-8"))
+console.log(fs.readFileSync("product.txt", "utf-8"))
