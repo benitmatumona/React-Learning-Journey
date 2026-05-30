@@ -1,5 +1,13 @@
-const response = await fetch("https://jsonplaceholder.typicode.com/posts/1")
+import fs from "fs"
 
-const data = await response.json()
+const user = {
+  id: 5,
+  name: "Sara",
+  active: true
+};
 
-console.log(data.body);
+const data = JSON.stringify(user, 4).toUpperCase()
+
+fs.writeFileSync("user.txt", data)
+
+console.log(fs.readFileSync("user.txt", "utf-8"))
