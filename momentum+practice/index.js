@@ -12,3 +12,4 @@ const data2 = JSON.stringify({name, email}, null, 2).toUpperCase()
 fs.writeFileSync("output.txt", data2)
 
 console.log(crypto.createHash("md5").update(fs.readFileSync("output.txt", "utf-8")).digest("hex"))
+
