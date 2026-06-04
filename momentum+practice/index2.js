@@ -1,5 +1,6 @@
 function validate(html) {
     let stack = []
+    
     for (const match of html.matchAll(/<\/?([a-z]+)>/g)) {
         if (stack.length == 0 || match[0] == stack[stack.length -1])
             stack.push(match[0])
